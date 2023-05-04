@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Cadastro de Comanda</title>
+	<script>
+		function exibirCamposPagamento(pagamento) {
+			var camposPix = document.getElementById('campos-pix');
+			var camposCheque = document.getElementById('campos-cheque');
+			var camposCredito = document.getElementById('campos-credito');
+			var camposDebito = document.getElementById('campos-debito');
+			var camposDinheiro = document.getElementById('campos-dinheiro');
+			switch(pagamento) {
+				case 'pix':
+					camposPix.style.display = 'block';
+					camposCheque.style.display = 'none';
+					camposCredito.style.display = 'none';
+					camposDebito.style.display = 'none';
+					camposDinheiro.style.display = 'none';
+					break;
+				case 'cheque':
+					camposPix.style.display = 'none';
+					camposCheque.style.display = 'block';
+					camposCredito.style.display = 'none';
+					camposDebito.style.display = 'none';
+					camposDinheiro.style.display = 'none';
+					break;
+				case 'credito':
+					camposPix.style.display = 'none';
+					camposCheque.style.display = 'none';
+					camposCredito.style.display = 'block';
+					camposDebito.style.display = 'none';
+					camposDinheiro.style.display = 'none';
+					break;
+				case 'debito':
+					camposPix.style.display = 'none';
+					camposCheque.style.display = 'none';
+					camposCredito.style.display = 'none';
+					camposDebito.style.display = 'block';
+					camposDinheiro.style.display = 'none';
+					break;
+				case 'dinheiro':
+					camposPix.style.display = 'none';
+					camposCheque.style.display = 'none';
+					camposCredito.style.display = 'none';
+					camposDebito.style.display = 'none';
+					camposDinheiro.style.display = 'block';
+					break;
+			}
+		}
+	</script>
+</head>
+<body>
+	<h1>Cadastro de Comanda</h1>
+	<form>
+		<fieldset>
+			<legend>Dados da comanda </legend>
+			<label for="nome">Nome do cliente</label>
+			<input type="text" id="nome" name="nome"><br>
+			<label for="mesa">Mesa:</label>
+			<input type="text" id="mesa" name="mesa"><br>
+            <label for="mesa">ID da comanda:</label>
+			<input type="int" id="id" name="id"><br>
+		</fieldset>
+		<fieldset>
+			<legend>Forma de Pagamento</legend>
+			<input type="radio" id="pix" name="pagamento" value="pix" onchange="exibirCamposPagamento('pix')">
+			<label for="pix">PIX</label><br>
+			<div id="campos-pix" style="display:none;">
+				<label for="chave-pix">Chave PIX:</label>
+				<input type="text" id="chave-pix" name="chave-pix"><br>
+                <label for="name-pix">Nome:</label>
+				<input type="text" id="name-pix" name="name-pix"><br>
+                <label for="cpf-pix">CPF:</label>
+				<input type="int" id="cpf-pix" name="cpf-pix"><br>
+			</div>
+			<input type="radio" id="cheque" name="pagamento" value="cheque" onchange="exibirCamposPagamento('cheque')">
+			<label for="cheque">Cheque</label><br>
+			<div id="campos-cheque" style="display:none;">
+				<label for="name-cheque">Nome:</label>
+				<input type="text" id="name-cheque" name="name-cheque"><br>
+                <label for="cpf-cheque">CPF:</label>
+				<input type="int" id="cpf-cheque" name="cpf-cheque"><br>
+                <label for="date-cheque">Data do debito:</label>
+				<input type="date" id="date-cheque" name="date-cheque"><br>
+			</div>
+            <input type="radio" id="credito" name="pagamento" value="credito" onchange="exibirCamposPagamento('credito')">
+			<label for="credito">Crédito</label><br>
+            <div id="campos-cheque" style="display:none;">
+				<label for="name-credito">Nome:</label>
+				<input type="text" id="name-credito" name="name-credito"><br>
+                <label for="cpf-credito">CPF:</label>
+				<input type="int" id="cpf-credito" name="cpf-credito"><br>
+                <label for="date-cheque">Data do debito:</label>
+				<input type="date" id="date-cheque" name="date-cheque"><br>
+			</div>

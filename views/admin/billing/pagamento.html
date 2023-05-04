@@ -5,7 +5,7 @@
 </head>
 <body>
 	<h1>Escolha o método de pagamento:</h1>
-	<form action="#" method="post">
+	<form action="/cadastro-comanda" method="post">
 		<input type="radio" id="pix" name="pagamento" value="pix">
 		<label for="pix">PIX</label><br>
 		<input type="radio" id="cheque" name="pagamento" value="cheque">
@@ -16,6 +16,13 @@
 		<label for="debito">Cartão de débito</label><br>
 		<input type="radio" id="dinheiro" name="pagamento" value="dinheiro">
 		<label for="dinheiro">Dinheiro</label><br><br>
+		<button id="cadastro">Seguir para cadastro</button>
 	</form>
+
+	<script>
+		document.getElementById("cadastro").addEventListener("click", function() {
+			window.location.href = "/admin/billing/cadastro-comanda";
+		});
+	</script>
 </body>
 </html>

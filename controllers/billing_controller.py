@@ -9,3 +9,7 @@ def billing_index():
 @billing.route("/pagamento")
 def payment():
     return render_template("/billing/pagamento.html")
+
+@billing.route("/cadastro-comanda")
+def cadastro_comanda():
+    return render_template("/billing/cadastro-comanda.html")
