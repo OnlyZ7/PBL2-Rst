@@ -7,5 +7,5 @@ def billing_index():
     return render_template("/billing/billing_index.html")
 
 @billing.route("/pagamento")
-def pagamento():
+def payment():
     return render_template("/billing/pagamento.html")
