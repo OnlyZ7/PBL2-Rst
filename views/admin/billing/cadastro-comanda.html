@@ -56,8 +56,6 @@
 			<legend>Dados da comanda </legend>
 			<label for="nome">Nome do cliente</label>
 			<input type="text" id="nome" name="nome"><br>
-			<label for="mesa">Mesa:</label>
-			<input type="text" id="mesa" name="mesa"><br>
             <label for="mesa">ID da comanda:</label>
 			<input type="int" id="id" name="id"><br>
 		</fieldset>
@@ -72,6 +70,7 @@
 				<input type="text" id="name-pix" name="name-pix"><br>
                 <label for="cpf-pix">CPF:</label>
 				<input type="int" id="cpf-pix" name="cpf-pix"><br>
+                <button id="metodo-pix">Salvar modo de pagamento</button>
 			</div>
 			<input type="radio" id="cheque" name="pagamento" value="cheque" onchange="exibirCamposPagamento('cheque')">
 			<label for="cheque">Cheque</label><br>
@@ -82,14 +81,42 @@
 				<input type="int" id="cpf-cheque" name="cpf-cheque"><br>
                 <label for="date-cheque">Data do debito:</label>
 				<input type="date" id="date-cheque" name="date-cheque"><br>
+                <button id="metodo-cheque">Salvar modo de pagamento</button>
 			</div>
-            <input type="radio" id="credito" name="pagamento" value="credito" onchange="exibirCamposPagamento('credito')">
+           <input type="radio" id="credito" name="pagamento" value="credito" onchange="exibirCamposPagamento('credito')">
 			<label for="credito">Crédito</label><br>
-            <div id="campos-cheque" style="display:none;">
+            <div id="campos-credito" style="display:none;">
 				<label for="name-credito">Nome:</label>
 				<input type="text" id="name-credito" name="name-credito"><br>
                 <label for="cpf-credito">CPF:</label>
 				<input type="int" id="cpf-credito" name="cpf-credito"><br>
-                <label for="date-cheque">Data do debito:</label>
-				<input type="date" id="date-cheque" name="date-cheque"><br>
+                <label for="numero-credito">Número do cartão: </label>
+				<input type="int" id="numero-debito" name="numero-debito"><br>
+                <label for="CVV-debito">CVV</label>
+				<input type="int" id="CVV-debito" name="CVV-debito"><br>
+                <button id="metodo-credito">Salvar modo de pagamento</button>
+			</div>
+            <input type="radio" id="debito" name="pagamento" value="debito" onchange="exibirCamposPagamento('debito')">
+			<label for="debito">Débito</label><br>
+            <div id="campos-debito" style="display:none;">
+				<label for="name-debito">Nome:</label>
+				<input type="text" id="name-debito" name="name-debito"><br>
+                <label for="cpf-debito">CPF: </label>
+				<input type="int" id="cpf-debito" name="cpf-debito"><br>
+                <label for="numero-debito">Número do cartão: </label>
+				<input type="int" id="numero-debito" name="numero-debito"><br>
+                <label for="CVV-debito">CVV</label>
+				<input type="int" id="CVV-debito" name="CVV-debito"><br>
+                <button id="metodo-debito">Salvar modo de pagamento</button>
+			</div>
+            <input type="radio" id="dinheiro" name="pagamento" value="dinheiro" onchange="exibirCamposPagamento('dinheiro')">
+			<label for="dinheiro">Dinheiro</label><br>
+            <div id="campos-dinheiro" style="display:none;">
+				<form action="/metodo-dinheiro" method=""post>
+                    <label for="name-dinheiro">Nome: </label>
+                    <input type="text" id="name-dinheiro" name="name-dinheiro"><br>
+                    <label for="cpf-dinheiro">CPF: </label>
+                    <input type="int" id="cpf-dinheiro" name="cpf-dinheiro"><br>
+                    <button id="metodo-dinheiro">Salvar modo de pagamento</button>
+                </form>
 			</div>

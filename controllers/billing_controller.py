@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template,redirect,url_for
+from flask import Blueprint, render_template,redirect,url_for,request
 
 billing = Blueprint("billing", __name__, template_folder='./views/admin/', static_folder='./static/', root_path="./")
 
@@ -13,3 +13,10 @@ def payment():
 @billing.route("/cadastro-comanda")
 def cadastro_comanda():
     return render_template("/billing/cadastro-comanda.html")
+
+@billing.route("/metodo-dinheiro", methods=["POST"])
+def salvar_metodo_dinheiro():
+    nome = request.form["name-dinheiro"]
+    cpf = request.form["cpf-dinheiro"]
+    
+    return "Dados salvos com sucesso"
