@@ -7,3 +7,14 @@ class Billing(db.Model):
     billing_date = db.Column(db.DateTime)
 
     billing_forms = db.relationship('BillingForm', back_populates = "billings", secondary='billing_billing_forms')
+
+
+    def add_biling(value,billing_date):
+        billing = Billing(value=value,billing_date=billing_date)
+
+        db.session.add(billing)
+        db.session.commit()
+
+    def get_billing():
+        return Billing.query.all()
+    

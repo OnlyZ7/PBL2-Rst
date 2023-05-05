@@ -13,8 +13,22 @@ class Ticket(db.Model):
 
     orders = db.relationship('Order', backref='tickets')
 
-    def save_tickets():
-        pass
+    def save_tickets(billing_id):
+        billing_form = Ticket(billing_id=billing_id)
+        db.session.add(billing_form)
+        db.session.commit()
 
     def get_tickets():
-        pass
+        return Ticket.query.all()
+    
+    
+    def ticket_asseg(client_id, billing_id):
+        # Filtrar todos os tickets com o mesmo client_id
+        tickets = Ticket.query.filter_by(client_id=client_id).all()
+
+        # Atualizar o billing_id de cada ticket
+        for ticket in tickets:
+            ticket.billing_id = billing_id
+
+        # Salvar as alterações no banco de dados
+        db.session.commit()

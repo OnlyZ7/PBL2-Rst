@@ -1,28 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Modelos de cobrança</title>
+	<title>Cadastro de cobrança </title>
 </head>
 <body>
-	<h1>Escolha o método de pagamento:</h1>
-	<form action="/cadastro-comanda" method="post">
-		<input type="radio" id="pix" name="pagamento" value="pix">
-		<label for="pix">PIX</label><br>
-		<input type="radio" id="cheque" name="pagamento" value="cheque">
-		<label for="cheque">Cheque</label><br>
-		<input type="radio" id="credito" name="pagamento" value="credito">
-		<label for="credito">Cartão de crédito</label><br>
-        <input type="radio" id="debito" name="pagamento" value="debito">
-		<label for="debito">Cartão de débito</label><br>
-		<input type="radio" id="dinheiro" name="pagamento" value="dinheiro">
-		<label for="dinheiro">Dinheiro</label><br><br>
-		<button id="cadastro">Seguir para cadastro</button>
+	<form action="/admin/billing/cadastro-pagamento" method="post">
+		<h1>Forma de cobrança nova</h1>
+		<fieldset>
+			<legend>Nome: </legend>
+			<input type="text" id="name" name="name"><br>
+			<legend>Descrição:  </legend>
+			<input type="text" id="description" name="description"><br>
+			<button type="submit">Cadastrar</button>
+		</fieldset>
 	</form>
-
-	<script>
-		document.getElementById("cadastro").addEventListener("click", function() {
-			window.location.href = "/admin/billing/cadastro-comanda.html";
-		});
-	</script>
 </body>
 </html>
