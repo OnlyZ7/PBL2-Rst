@@ -12,5 +12,43 @@
         <div id="content">
             {% block content %} {% endblock %}
         </div>
+        <div>
+            <h1>Metodos de pagamento</h1>
+            <table>
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>description</tr>
+                </thead>
+                <tbody>
+                  {% for billing_teste1 in billing_teste1 %}
+                    <tr>
+                      <td>{{ billing_teste1.name }}</td>
+                      <td>{{ billing_teste1.description }}</td>
+                    </tr>
+                  {% endfor %}
+                </tbody>
+              </table>
+        </div>
+        <div>
+            <h1>Tabela de cobranças</h1>
+            <table>
+                <thead>
+                  <tr>
+                    <th>ID da cobrança</th>
+                    <th>ID da forma de pagamento</th>
+                    <th>Valor</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {% for billing_teste2 in billing_teste2 %}
+                    <tr>
+                      <td>{{ billing_teste2.billing_id }}</td>
+                      <td>{{ billing_teste2.billing_form_id }}</td>
+                      <td>{{ billing_teste2.value }}</td>
+                    </tr>
+                  {% endfor %}
+                </tbody>
+              </table>
     </body>
 </html>

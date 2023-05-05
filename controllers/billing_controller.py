@@ -5,9 +5,15 @@ from sqlalchemy import func
 
 billing = Blueprint("billing", __name__, template_folder='./views/admin/', static_folder='./static/', root_path="./")
 
-@billing.route("/")
+@billing.route("/", methods=["POST","GET"])
 def billing_index():
-    return render_template("/billing/billing_index.html")
+
+    billing_teste1 = BillingForm.get_billing_forms()
+
+    billing_teste2 = BillingBillingForms.get_billing_billing()
+
+
+    return render_template("/billing/billing_index.html", billing_teste1=billing_teste1, billing_teste2=billing_teste2)
 
 @billing.route("/pagamento")
 def payment():
